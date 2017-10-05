@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h1>{{title}}</h1>
+  <div>
+    <ul>
+      {% for category in categories %}
+        <li><a href="/product?category={{category['id']}}">{{category['name']}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

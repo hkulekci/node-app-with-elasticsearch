@@ -1,0 +1,19 @@
+<h3>{{title}}</h3>
+<div class="row">
+  <div class="col-6 database">
+    <h5>Database <sup><small>(Total : {{db['totalCount']}})</small></sup></h5>
+    <div class="list-group">
+      {% for product in db['products'] %}
+        <a href="/product/{{product['id']}}"class="list-group-item">{{product['name']}}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-6 elastic_autocomplete">
+    <h5>Elastic <sup><small>(Total : {{elastic['totalCount']}})</small></sup></h5>
+    <div class="list-group">
+      {% for product in elastic['products'] %}
+        <a href="/product/{{product['id']}}" class="list-group-item">{{product['name']}}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

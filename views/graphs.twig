@@ -1,0 +1,8 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <div class="row">
+    <h1>From Kibana</h1>
+    <iframe src="http://127.0.0.1:5601/app/kibana#/visualize/edit/c46522a0-a9d5-11e7-aba8-ad0a02c02284?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:'2015-11-29T04:09:45.541Z',mode:absolute,to:'2017-10-31T21:00:00.000Z'))&_a=(filters:!(),linked:!f,query:(query_string:(analyze_wildcard:!t,query:'*')),uiState:(),vis:(aggs:!((enabled:!t,id:'1',params:(field:quantity),schema:metric,type:sum),(enabled:!t,id:'2',params:(field:categories.name.keyword,order:desc,orderBy:'1',size:5),schema:segment,type:terms)),listeners:(),params:(addLegend:!t,addTooltip:!t,isDonut:!f,legendPosition:right),title:'New+Visualization',type:pie))" class="col-6 border-0"></iframe>
+  </div>
+{% endblock %}

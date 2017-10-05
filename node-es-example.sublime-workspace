@@ -1,0 +1,1462 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pro",
+				"products"
+			],
+			[
+				"produc",
+				"productService"
+			],
+			[
+				"Bi",
+				"216Bilişim"
+			],
+			[
+				"erro",
+				"error_reporting"
+			],
+			[
+				"Sm",
+				"Sms_Parola"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"de",
+				"debug"
+			],
+			[
+				"sms",
+				"smsData"
+			],
+			[
+				"gsm",
+				"gsmk"
+			],
+			[
+				"base",
+				"base64_encode"
+			],
+			[
+				"te",
+				"text-warning"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"nav",
+				"nav-link"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"C",
+				"CustomListView"
+			],
+			[
+				"Json",
+				"JSON"
+			],
+			[
+				"resp",
+				"response"
+			],
+			[
+				"mul",
+				"multi_send_number_check"
+			],
+			[
+				"data",
+				"data_number"
+			],
+			[
+				"model",
+				"model_app_number"
+			],
+			[
+				"rec",
+				"recommendation-api"
+			],
+			[
+				"elastic",
+				"Elasticsearch"
+			],
+			[
+				"setT",
+				"setTo"
+			],
+			[
+				"expe",
+				"expectException"
+			],
+			[
+				"glob",
+				"globalId"
+			],
+			[
+				"coo",
+				"cookie_file"
+			],
+			[
+				"gl",
+				"glbLoginId"
+			],
+			[
+				"sql",
+				"sqlExtra"
+			],
+			[
+				"APP",
+				"APP_DIR"
+			],
+			[
+				"A",
+				"APP_DIR"
+			],
+			[
+				"EXA",
+				"TEMPLATE_EXAM"
+			],
+			[
+				"SMS",
+				"SMS_DEFAULT_SUFFIX_TEXT"
+			],
+			[
+				"define",
+				"defined"
+			],
+			[
+				"disea",
+				"disease_id"
+			],
+			[
+				"res",
+				"response_count"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"glo",
+				"glob"
+			],
+			[
+				"dele",
+				"deleteFileIndex"
+			],
+			[
+				"crea",
+				"createMapping"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"htt",
+				"httpDeleteRequest"
+			],
+			[
+				"getLas",
+				"getLastError"
+			],
+			[
+				"pri",
+				"price_load_data"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"sco",
+				"scopeIdentifier"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"debug",
+				"debug_backtrace"
+			],
+			[
+				"scope",
+				"scopes"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"mai",
+				"mail_text"
+			],
+			[
+				"Gl",
+				"globalhaberlesme"
+			],
+			[
+				"js",
+				"json_encode"
+			],
+			[
+				"mer",
+				"merchant_ok_url"
+			],
+			[
+				"API",
+				"API_SYSTEM"
+			],
+			[
+				"post",
+				"post_vals"
+			],
+			[
+				"DOcker",
+				"dockerfile"
+			],
+			[
+				"page",
+				"page_size"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"req",
+				"requestData"
+			],
+			[
+				"reques",
+				"requestData"
+			],
+			[
+				"strin",
+				"stringify"
+			],
+			[
+				"pos",
+				"postData"
+			],
+			[
+				"err",
+				"errorData"
+			],
+			[
+				"error",
+				"errorData"
+			],
+			[
+				"seo",
+				"seo_urls"
+			],
+			[
+				"seo_",
+				"seo_url"
+			],
+			[
+				"product_id",
+				"product_ids"
+			],
+			[
+				"f",
+				"find\tmethod"
+			],
+			[
+				"Per",
+				"Person\tclass"
+			],
+			[
+				"loca",
+				"localStorage\tvar"
+			],
+			[
+				"mem",
+				"memberData\tproperty"
+			],
+			[
+				"getMem",
+				"getMemberDataById\tmethod"
+			],
+			[
+				"cons",
+				"constructor\tkeyword"
+			],
+			[
+				"get",
+				"getMemberListData\tmethod"
+			],
+			[
+				"priva",
+				"privateviewContainerRef\tparameter"
+			],
+			[
+				"View",
+				"ViewContainerRef\talias"
+			],
+			[
+				"node",
+				"node_modules"
+			],
+			[
+				"ng-b",
+				"ng2-bootstrap-prod\tAngular 2 Production Bootstrap Snippet"
+			],
+			[
+				"Date",
+				"DatePicker\talias"
+			],
+			[
+				"acc",
+				"accessTokenEntity"
+			],
+			[
+				"Paymen",
+				"PaymentPlanModel\talias"
+			],
+			[
+				"Payme",
+				"PaymentPlanStatusModel\tclass"
+			],
+			[
+				"Paym",
+				"PaymentPlanTypeModel\tclass"
+			],
+			[
+				"Pay",
+				"PaymentPlans\talias"
+			],
+			[
+				"Rou",
+				"Router\talias"
+			],
+			[
+				"Pl",
+				"PlanListPaymentComponent\talias"
+			],
+			[
+				"getPa",
+				"getPaymentPlans\tmethod"
+			],
+			[
+				"plan",
+				"planStatuses\tproperty"
+			],
+			[
+				"pla",
+				"planTypes\tproperty"
+			],
+			[
+				"Payment",
+				"PaymentPlanTypeModel\talias"
+			],
+			[
+				"tra",
+				"transactionStatuses\tproperty"
+			],
+			[
+				"Tra",
+				"TransactionStatuses\talias"
+			],
+			[
+				"Trasa",
+				"TransactionStatusModel\tclass"
+			],
+			[
+				"Trsa",
+				"TransactionMethodModel\talias"
+			],
+			[
+				"Transa",
+				"TransactionMethods\talias"
+			],
+			[
+				"Member",
+				"MemberType\tclass"
+			],
+			[
+				"me",
+				"memberHistoryData\tproperty"
+			],
+			[
+				"imp",
+				"implements\tkeyword"
+			],
+			[
+				"Ra",
+				"RacesComponent\talias"
+			],
+			[
+				"Inject",
+				"Injectable\tvar"
+			],
+			[
+				"Ca",
+				"CARPARTS\talias"
+			],
+			[
+				"styles",
+				"styleUrls\tproperty"
+			],
+			[
+				"styl",
+				"styles\tproperty"
+			],
+			[
+				"gr",
+				"groups"
+			],
+			[
+				"json",
+				"json_data"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"group",
+				"group_id"
+			],
+			[
+				"bin",
+				"bindParam"
+			],
+			[
+				"gro",
+				"group"
+			],
+			[
+				"mode",
+				"model_app_group"
+			],
+			[
+				"group_",
+				"group_id"
+			],
+			[
+				"sele",
+				"selected"
+			],
+			[
+				"Mem",
+				"MemberForm"
+			],
+			[
+				"V",
+				"VueRouter"
+			],
+			[
+				"hea",
+				"Headernav"
+			],
+			[
+				"head",
+				"headnav"
+			],
+			[
+				"Head",
+				"headnav"
+			],
+			[
+				"Membe",
+				"MemberList"
+			],
+			[
+				"IYZ",
+				"IYZICO_API_URL"
+			],
+			[
+				"IY",
+				"IYZICO_APP_SECRET"
+			],
+			[
+				"IYZI",
+				"IYZICO_APP_ID"
+			],
+			[
+				"part",
+				"part_number"
+			],
+			[
+				"slice",
+				"splicedTxt"
+			],
+			[
+				"Rea",
+				"RealPathFilter"
+			],
+			[
+				"perso",
+				"personIdentity"
+			],
+			[
+				"write",
+				"writeLog"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 123.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"json",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"yam",
+				"Set Syntax: YAML"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"jso",
+				"Pretty JSON: Minify (compress) JSON"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"hm",
+				"HTMLBeautify"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"bable",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"babe",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"setSpace",
+				"Set Syntax: TypeScriptReact"
+			],
+			[
+				"set php",
+				"Set Syntax: PHP"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"beaut",
+				"HTMLBeautify"
+			],
+			[
+				"beau",
+				"HTMLBeautify"
+			],
+			[
+				"go",
+				"Set Syntax: Go"
+			],
+			[
+				"text",
+				"Set Syntax: Textile"
+			],
+			[
+				"set TC",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"set jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"set ",
+				"Set Syntax: Tcl"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 167.0,
+		"history":
+		[
+			"print '1'",
+			"print ",
+			"print \"1\"",
+			"print 1",
+			"ping 1;",
+			"echo",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/webroot/github/node-es-example/node-es-example.sublime-project",
+		"/Volumes/webroot/github/node-es-example/.sublime-project",
+		"/Volumes/webroot/github/node-es-example/node_modules/mysql/index.js",
+		"/Volumes/webroot/github/node-es-example/routes/index.js",
+		"/Volumes/webroot/github/node-es-example/libraries/sample.database.js",
+		"/Volumes/webroot/github/node-es-example/app.js",
+		"/Volumes/webroot/github/node-es-example/node_modules/cookie-parser/index.js",
+		"/Volumes/webroot/github/node-es-example/package.json",
+		"/Users/kulekci/Downloads/i.sh",
+		"/Users/kulekci/Downloads/i (1).sh",
+		"/Volumes/webroot/github/elastic-docker/.docker/logstash/Dockerfile",
+		"/Volumes/webroot/github/elastic-docker/.docker/elasticsearch/Dockerfile",
+		"/Volumes/webroot/github/elastic-docker/.docker/kibana/Dockerfile",
+		"/Volumes/webroot/github/elastic-docker/.docker/elasticsearch/config/elasticsearch.yml",
+		"/Volumes/webroot/github/elastic-docker/.docker/logstash/conf/logstash.conf",
+		"/Volumes/webroot/github/elastic-docker/sample/test.csv",
+		"/Volumes/webroot/github/elastic-docker/docker-compose.yml",
+		"/Volumes/webroot/github/elastic-docker/.docker/logstash/conf/template.json",
+		"/Users/kulekci/Desktop/Kulekci.net/Slides/Selcuk/test.csv",
+		"/Volumes/webroot/github/elasticsearch-tr/_posts/2017-09-30-kibana-yi-zaman-damgasiz-kayitlar-ile-kullanma.md",
+		"/Volumes/webroot/github/elastic-docker/sample/.gitkeep",
+		"/Volumes/webroot/github/elastic-docker/.gitignore",
+		"/Volumes/webroot/github/elastic-docker/data/.gitkeep",
+		"/Users/kulekci/Desktop/Kulekci.net/Slides/Selcuk/Data_Infınıty/Gelir Gider Hareketleri-Table 1.csv",
+		"/Users/kulekci/Downloads/Employees100K.json",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/3A064EF7-F3EC-4835-AC75-9C28E4E7BADD/basarilisms.com",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/8CCE40E3-4085-445D-AE6F-EE50CD5E8235/redis.conf",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/A9BCF2F7-8ACE-4B14-8FA7-9052862715A4/6379.conf",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/8B57EC0D-EBEA-45EB-A991-E8898EA997F2/216bilisim.com.db",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/4E456B20-CAA0-4902-9575-7CD72D750821/index.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/36CCEB43-280B-4B9C-98A0-9A507F6257CA/redis.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/1F82672D-68A3-4141-8DA9-B1A877753A8D/m_out.js",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/8521840B-EE83-4346-915B-D3F36126E129/named.conf",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/AB8A56F9-DDD9-4093-8FB5-6F6B9CB2D1CB/config.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/7EE38CC3-4B5E-4981-A86A-4A8F22046D99/index.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/D322AE90-4072-4DE4-BC02-2F7BC1EB0441/redis.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/4E19E6C0-3AF4-444D-A8C2-6A59D7B97398/index.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/D2D5CC43-0E59-41BE-9EDB-2C2D29DB6970/door.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/26AA1772-0541-432A-ADDC-51B76EF81F10/hosts",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/3618D2BB-3D12-4B87-B230-FB108E9BBA9A/smsapi.php",
+		"/etc/hosts",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/55DD15A3-1E83-41E2-8804-ADF90D4047CC/216bilisim.com",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/1A6C635B-6CC2-4446-9F9B-FD64C39251FD/216bilisim.com.db",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/08CF49BE-A251-4B4D-8BED-857C394FB2C4/216bilisim.com.db",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/9CB51A8A-80D1-448A-9194-8D6DAD5812F4/fastcgi.conf",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/ADB5F5B4-7CEA-4C67-9374-0D0E2CA24DD1/nginx.conf",
+		"/Volumes/webroot/github/motlab/_config.yml",
+		"/Volumes/webroot/github/motlab/sms.html",
+		"/Volumes/webroot/github/motlab/_includes/head.html",
+		"/Volumes/webroot/github/motlab/index.html",
+		"/Volumes/webroot/github/motlab/.gitignore",
+		"/Volumes/webroot/github/airspace-jekyll/.gitignore",
+		"/Volumes/webroot/github/airspace-jekyll/_includes/head.html",
+		"/Volumes/webroot/github/airspace-jekyll/_includes/header.html",
+		"/Volumes/webroot/github/airspace-jekyll/index.html",
+		"/Volumes/webroot/github/airspace-jekyll/_config.yml",
+		"/Volumes/webroot/github/airspace-jekyll/sms.html",
+		"/Volumes/webroot/github/airspace-jekyll/_config.yml.example",
+		"/Volumes/webroot/github/airspace-jekyll/_data/funfacts.yml",
+		"/Volumes/webroot/github/airspace-jekyll/_data/testimonials.yml",
+		"/Volumes/webroot/github/airspace-jekyll/_includes/footer.html",
+		"/Volumes/webroot/github/airspace-jekyll/README.md",
+		"/Volumes/webroot/github/airspace-jekyll/css/bootstrap.min.css",
+		"/Volumes/webroot/github/airspace-jekyll/_site/index.html",
+		"/Volumes/webroot/github/airspace-jekyll/_layouts/default.html",
+		"/Volumes/webroot/github/phpthewrongway/public_html/img/deviant-code-1000px-tr.png",
+		"/Volumes/webroot/github/phpthewrongway/inc/default_tr.html5",
+		"/Volumes/webroot/github/phpthewrongway/Makefile",
+		"/Volumes/webroot/github/phpthewrongway/sections/tr/always_use_a_design_pattern.md",
+		"/Volumes/webroot/github/phpthewrongway/inc/logo_and_date_tr.txt",
+		"/Users/kulekci/Desktop/OdaOtomasyonu/TOYS/Toys/WEB-INF/classes/tr/com/arf/toys/db/enumerated/uye/UyeAidatDurum.java",
+		"/Users/kulekci/Desktop/OdaOtomasyonu/TOYS/Toys/WEB-INF/classes/tr/com/arf/toys/view/controller/form/system/AidatController.java",
+		"/Volumes/webroot/github/odayonetim-frontend-v2/src/config.ts",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/4499F368-1559-43C1-8DD2-9C12A7A13237/ExamQuestionCreateParameterInputFilter.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/310FD643-F174-4544-B667-29CAE05A545B/main.js",
+		"/Volumes/webroot/sss/lisp",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/2DA6C050-48A3-46A1-8A85-C699A7F41BF2/default.conf",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/897495EE-0FE8-450A-B172-F020EADB82D3/index.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/C3CE46E6-4600-4F57-BED4-8C41D6DA04E2/admin-config.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/2291C1DB-F037-4880-85E6-BB4893F5E09D/public-config.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/7D00B1AD-6676-4889-93C4-AE6B465C09DB/service-config.php",
+		"/Volumes/webroot/github/odayonetim-api/src/Api/Member/StatusAction.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/2B825E89-38E5-4143-AB89-2ABA5C54BD9A/KimlikNodanKisiBilgisiGetirResult_23323443123.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/AA9623B5-D8C6-46DB-B0BF-0C57421C522F/NviService.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/63CFA21D-7958-418D-9845-D57A923C0ECC/NviService.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/2ECAD054-B7A2-4D3B-800E-161327F0576C/NviPersonIdentityBuilder.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/0FA3B77E-D3FD-452C-928C-DC4B84ADBBD8/NviService.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/41B41809-E3EA-48F3-AD60-44A039A28D43/config.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/59F94D31-7C3F-47DA-BE18-E671058E2E91/header.tpl",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/B9CF602C-34A5-4552-BF7B-42D56EF23CF7/NviTestCommand.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/635D07F6-75D4-4404-B25E-59998BCF57F0/edit-profile",
+		"/Users/kulekci/Downloads/Ex_Files_Hadoop_Fund/Exercise Files/shakespeare.raw",
+		"/Users/kulekci/Desktop/OdaOtomasyonu/MMO_SMS/request.test.log",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/39120729-83FF-412C-878C-E0C5D778357E/maintain.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/6220268A-6015-45F8-AF25-7ABC3B8D2410/smsgonder.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/E1BAFF52-2A69-42D8-B883-F637DB80E2F5/sms_functions.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/4AF58555-260D-4717-B34F-33E5F6ECFCB5/sms_kontrol_et.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/D4F1D8A2-53E3-457E-98DA-B7F16702075D/smsgonder_20170822.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/726C3C20-FFFD-4F16-A850-4491D0AC64A8/sms_sorgula.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/43969672-4DAB-4738-A7B7-4641483C58E4/ust.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/6FE481BF-E0AB-4A81-A6AB-A1A60B820209/belge_rapor_pdf.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/A7DCAFA2-358F-4E42-912B-FFB20473E4C9/index.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/3F75C5EC-5071-48EF-9BCD-5F45021D1131/sabitler.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/9422CD12-B68D-4F40-922A-6C26FE0E9360/test.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/90FE6E62-A5B9-409B-AF67-5DF696CD2C96/smsgonder.php",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/FAD09556-980A-46B1-8E11-623A23037D1B/elistele.php",
+		"/Volumes/webroot/github/mmo-sizdirmazlik/update.diff",
+		"/Volumes/webroot/github/motivolog/v2.0/html/index.html",
+		"/Volumes/webroot/github/motivolog/v2.0/html/dist/css/custom.css",
+		"/Volumes/webroot/github/motivolog/v2.0/html/dist/css/bootstrap.css",
+		"/Volumes/webroot/github/motivolog/v2.0/html/css/bootstrap.css",
+		"/Volumes/webroot/github/motivolog/v2.0/html/dist/fontawesome-5.0.0-beta2-mac/css/font-awesome-light.css",
+		"/Issue : https:::github.com:hkulekci:odayonetim-fro",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/493E4FDD-58EF-423B-BF22-84C6ABC0A54C/PaymentService.php",
+		"/Users/kulekci/Desktop/ReactNativeExamples/AwesomeApp/components/custom.list.view.js",
+		"/Users/kulekci/Desktop/ReactNativeExamples/AwesomeApp/components/main.app.js",
+		"/Users/kulekci/Desktop/ReactNativeExamples/AwesomeApp/index.ios.js",
+		"/Users/kulekci/Desktop/ReactNativeExamples/AwesomeApp/index.android.js",
+		"/Users/kulekci/Desktop/ReactNativeExamples/AwesomeApp/node_modules/react-native/Libraries/Renderer/ReactNativeStack-dev.js",
+		"/Users/kulekci/Library/Application Support/Sublime Text 3/Packages/Babel/JavaScript (Babel).sublime-syntax",
+		"/Users/kulekci/Desktop/ReactNativeExamples/AwesomeApp/.sublime-settings",
+		"/Users/kulekci/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package",
+		"/Users/kulekci/Library/Application Support/Sublime Text 3/Packages/User/Side Bar Folders.sublime-settings",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/BCC4696C-08CA-4BA6-8926-95DEDC34F8EC/change_configs.sh",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/DED92B98-F0D4-40A8-ABF7-04D3BEE745D5/change_configs.sh",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/8877D60A-5F42-46D3-83A9-2FAEAA90BD85/change_configs.sh",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/9B2D3FC7-9FA0-40F5-8774-853CE89A2BB2/change_configs.sh",
+		"/Users/kulekci/Library/Caches/Cleanup At Startup/Transmit/BB240816-F08A-4D99-BECC-848C8E407679/change_configs.sh"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 107.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.GoSublime-main-output":
+	{
+		"height": 136.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 136.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 136.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"head",
+				"_includes/head.html"
+			],
+			[
+				"uyeadiatd",
+				"Toys/WEB-INF/classes/tr/com/arf/toys/db/enumerated/uye/UyeAidatDurum.java"
+			],
+			[
+				"nvi",
+				"WEB-INF/classes/tr/com/arf/toys/utility/validator/ToysTCKimlikNoValidator.java"
+			],
+			[
+				"480",
+				"wp-content/themes/havaegitim/css/480.css"
+			],
+			[
+				"480.",
+				"wp-content/themes/havaegitim/css/480.css"
+			],
+			[
+				"auditsearch/template.html",
+				"app/modules/security/components/UOG/auditSearch/template.html"
+			],
+			[
+				"gghauditsearchcontroller",
+				"app/modules/security/components/GGH/auditSearch/auditSearchController.js"
+			],
+			[
+				"uogau",
+				"app/modules/security/components/UOG/auditList/auditListController.js"
+			],
+			[
+				"drillcontr",
+				"app/modules/security/components/drill/drillList/drillListController.js"
+			],
+			[
+				"navbar",
+				"app/shared/layout/navbar.html"
+			],
+			[
+				"sidebar",
+				"app/shared/layout/sidebar.html"
+			],
+			[
+				"side",
+				"app/shared/layout/sidebar.html"
+			],
+			[
+				"na",
+				"app/shared/layout/navbar.html"
+			],
+			[
+				"corres",
+				"app/modules/correspondence/components/correspondence/correspondenceController.js"
+			],
+			[
+				"address",
+				"app/modules/base/components/address/addressController.js"
+			],
+			[
+				"auditsearch",
+				"app/modules/security/components/GGH/auditSearch/template.html"
+			],
+			[
+				"auditser",
+				"app/modules/security/components/GGH/auditSearch/auditSearchController.js"
+			],
+			[
+				"ositinocont",
+				"app/Http/Controllers/Auth/PositionController.php"
+			],
+			[
+				"drillauditcontroll",
+				"app/Solutions/Gss/Http/Controllers/Drill/DrillAuditController.php"
+			],
+			[
+				"gsspayro",
+				"app/Solutions/Holding/Http/Controllers/Payroll/GssPayrollController.php"
+			],
+			[
+				"companyresourcecest",
+				"tests/api/org/CompanyResourceCest.php"
+			],
+			[
+				"departmentresourcecest",
+				"tests/api/org/DepartmentResourceCest.php"
+			],
+			[
+				"transferli",
+				"app/modules/transferList/components/transferList/list.html"
+			],
+			[
+				"notehtml",
+				"app/modules/correspondence/components/correspondenceDetail/outbox/template.html"
+			],
+			[
+				"uncaughtexceptionnotification",
+				"app/Notification/UncaughtExceptionNotification.php"
+			],
+			[
+				"backen",
+				"app/Notification/Notifiables/BackendChannel.php"
+			],
+			[
+				"purcreq",
+				"app/Solutions/Fhy/Http/Controllers/Purchase/PurchaseRequestController.php"
+			],
+			[
+				"loggerabstractservicefactory",
+				"src/LoggerAbstractServiceFactory.php"
+			],
+			[
+				"apmcon",
+				"app/Solutions/Fhy/Http/Controllers/Apm/ApmController.php"
+			],
+			[
+				"add_code",
+				"database/migrations/2016_12_19_150402_alter_roles_table_add_code_column.php"
+			],
+			[
+				"recordimageupload",
+				"app/Solutions/Gss/Services/Audit/GGH/Component/Image/RecordImageUpload.php"
+			],
+			[
+				"auditrecordimagecontroller",
+				"app/Solutions/Gss/Http/Controllers/GGH/AuditRecordImageController.php"
+			],
+			[
+				"app.",
+				"config/app.php"
+			],
+			[
+				"positioner/fixed.php",
+				"vendor/dompdf/dompdf/src/Positioner/Fixed.php"
+			],
+			[
+				"ramereflower/block.php",
+				"vendor/dompdf/dompdf/src/FrameReflower/Block.php"
+			],
+			[
+				"positioner/block.php",
+				"vendor/dompdf/dompdf/src/Positioner/Block.php"
+			],
+			[
+				"style.php",
+				"vendor/dompdf/dompdf/src/Css/Style.php"
+			],
+			[
+				"documentty",
+				"app/Services/Documentation/DocumentType/DocumentType.php"
+			],
+			[
+				"companyprovider",
+				"app/Services/Hr/Organisation/Company/EloquentCompanyProvider.php"
+			],
+			[
+				"payrollcon",
+				"app/Http/Controllers/Payroll/PayrollController.php"
+			],
+			[
+				"excel2007",
+				"vendor/phpoffice/phpexcel/Classes/PHPExcel/Reader/Excel2007.php"
+			],
+			[
+				"report",
+				"app/report/report.component.ts"
+			],
+			[
+				"smsverification",
+				"app/Services/Payroll/Traits/SmsVerification.php"
+			],
+			[
+				"http",
+				"app/http.data.provider.ts"
+			],
+			[
+				"app/queryblocks/singlequery/queries/geodistancerange.query.ts",
+				"app/queryBlocks/singlequery/queries/geodistancerange.query.ts"
+			],
+			[
+				"app/queryblocks/singlequery/queries/geodistancerange.query.spec.ts",
+				"app/queryBlocks/singlequery/queries/geodistancerange.query.spec.ts"
+			],
+			[
+				"app/queryblocks/singlequery/queries/geoboundingbox.query.spec.ts",
+				"app/queryBlocks/singlequery/queries/geoboundingbox.query.spec.ts"
+			],
+			[
+				"app/queryblocks/singlequery/queries/geoboundingbox.query.ts",
+				"app/queryBlocks/singlequery/queries/geoboundingbox.query.ts"
+			],
+			[
+				"authvie",
+				"src/main/javascript/view/AuthView.js"
+			],
+			[
+				"authview",
+				"src/main/javascript/view/AuthView.js"
+			],
+			[
+				"membermodel",
+				"app/member/member.model.ts"
+			],
+			[
+				"membermodel.ts",
+				"app/member/member.model.ts"
+			],
+			[
+				"member.model.t",
+				"app/member/member.model.ts"
+			],
+			[
+				"middlewarepipetest",
+				"test/MiddlewarePipeTest.php"
+			],
+			[
+				"requesttest",
+				"test/Http/RequestTest.php"
+			],
+			[
+				"messagetraittest",
+				"test/MessageTraitTest.php"
+			],
+			[
+				"uritest",
+				"test/UriTest.php"
+			],
+			[
+				"servertest",
+				"test/ServerTest.php"
+			],
+			[
+				"ng2componen",
+				"node_modules/ng2-bootstrap/components/utils/components-helper.service.d.ts"
+			],
+			[
+				"ng2component",
+				"node_modules/ng2-bootstrap/components/utils/components-helper.service.js"
+			],
+			[
+				"angularcoretype",
+				"node_modules/@angular/core/src/reflection/types.d.ts"
+			],
+			[
+				"components-helper.service.d.ts",
+				"node_modules/ng2-bootstrap/components/utils/components-helper.service.d.ts"
+			],
+			[
+				"func",
+				"src/functions.php"
+			],
+			[
+				"accesstokenaction",
+				"src/OAuth2Server/Action/AccessTokenAction.php"
+			],
+			[
+				"accesstokentrait",
+				"vendor/league/oauth2-server/src/Entities/Traits/AccessTokenTrait.php"
+			],
+			[
+				"accsstoken",
+				"src/OAuth2Server/Entity/AccessToken.php"
+			],
+			[
+				"bearertokenresponse",
+				"vendor/league/oauth2-server/src/ResponseTypes/BearerTokenResponse.php"
+			],
+			[
+				"authorizationserver",
+				"vendor/league/oauth2-server/src/AuthorizationServer.php"
+			],
+			[
+				"routerlink",
+				"node_modules/@angular/router/src/directives/router_link.d.ts"
+			],
+			[
+				"ngmode",
+				"node_modules/@angular/forms/src/directives/ng_model.d.ts"
+			],
+			[
+				"popeve",
+				"node_modules/@ng-bootstrap/ng-bootstrap/popover/index.d.ts"
+			],
+			[
+				"resor",
+				"vendor/league/oauth2-server/src/Middleware/ResourceServerMiddleware.php"
+			],
+			[
+				"resource",
+				"src/OAuth2Server/Middleware/ResourceServerMiddleware.php"
+			],
+			[
+				"compo",
+				"composer.json"
+			],
+			[
+				"checkoutform",
+				"src/Iyzipay/Model/CheckoutForm.php"
+			],
+			[
+				"checkoutforminitializemapper",
+				"src/Iyzipay/Model/Mapper/CheckoutFormInitializeMapper.php"
+			],
+			[
+				"checkoutforminitialize",
+				"src/Iyzipay/Model/CheckoutFormInitialize.php"
+			],
+			[
+				"frame",
+				"_site/2016/06/01/Frameworks.html"
+			],
+			[
+				"composer",
+				"_site/2004/02/01/Composer-and-Packagist.html"
+			],
+			[
+				"welcome",
+				"_includes/welcome.md"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"contribu",
+				"CONTRIBUTING.md"
+			],
+			[
+				"08-05-01-further-reading.md",
+				"_posts/08-05-01-Further-Reading.md"
+			],
+			[
+				"validator/di",
+				"vendor/zendframework/zend-validator/src/Digits.php"
+			],
+			[
+				"filter/digi",
+				"vendor/zendframework/zend-filter/src/Digits.php"
+			],
+			[
+				"settings",
+				"data/elasticsearch/mappings/settings.json"
+			],
+			[
+				"listing.json",
+				"data/elasticsearch/mappings/listing.json"
+			],
+			[
+				"locationreportimporterservicetest",
+				"module/Ring/test/RingTest/Service/LocationReportImporterServiceTest.php"
+			],
+			[
+				"query/compan",
+				"module/Search/src/Search/Query/Company.php"
+			],
+			[
+				"companyres",
+				"module/Api/src/Api/V1/Company/CompanyResource.php"
+			],
+			[
+				"apitest/v1/company/companyresourcetest",
+				"module/Api/test/ApiTest/V1/Company/CompanyResourceTest.php"
+			],
+			[
+				"servicemanager",
+				"vendor/zendframework/zend-servicemanager/src/ServiceManager.php"
+			],
+			[
+				"controllermanager",
+				"vendor/zendframework/zend-mvc/src/Controller/ControllerManager.php"
+			],
+			[
+				"authcontroller",
+				"module/Admin/src/Admin/Controller/AuthController.php"
+			],
+			[
+				"conversationres",
+				"module/Api/src/Api/V1/Conversation/ConversationResource.php"
+			],
+			[
+				"listingrepos",
+				"module/Listing/src/Listing/Entity/Repository/ListingRepository.php"
+			],
+			[
+				"apimodule.php",
+				"module/Api/Module.php"
+			],
+			[
+				"listingser",
+				"module/Listing/src/Listing/Service/Factory/ListingServiceFactory.php"
+			],
+			[
+				"listingreposi",
+				"module/Listing/src/Listing/Entity/Repository/ListingRepository.php"
+			],
+			[
+				"userrightrepo",
+				"module/Payment/src/Payment/Entity/Repository/UserRightRepository.php"
+			],
+			[
+				"listingresour",
+				"module/Api/src/Api/V1/Listing/ListingResource.php"
+			],
+			[
+				"userri",
+				"module/Payment/src/Payment/Entity/UserRightRule.php"
+			],
+			[
+				"userrig",
+				"module/Payment/src/Payment/Service/UserRight.php"
+			],
+			[
+				"servicelisting",
+				"module/Listing/src/Listing/Service/Listing.php"
+			],
+			[
+				"projectres",
+				"module/Api/src/Api/V2/Project/ProjectResource.php"
+			],
+			[
+				"zendpaginator",
+				"vendor/zendframework/zendframework/library/Zend/Paginator/Paginator.php"
+			],
+			[
+				"fakearray",
+				"module/Core/src/Core/Paginator/FakeArrayAdapter.php"
+			],
+			[
+				"doctrinepaginator",
+				"vendor/doctrine/doctrine-orm-module/src/DoctrineORMModule/Paginator/Adapter/DoctrinePaginator.php"
+			],
+			[
+				"entbase",
+				"module/Core/src/Core/Entity/Base.php"
+			],
+			[
+				"entityconversation",
+				"module/User/src/User/Entity/Conversation.php"
+			],
+			[
+				"userstatus",
+				"module/CRM/src/CRM/Entity/UserStatus.php"
+			],
+			[
+				"pdo.php",
+				"module/ZngAuth/src/ZngAuth/Storage/Adapter/Pdo.php"
+			],
+			[
+				"projectreso",
+				"module/Api/src/Api/V2/Project/ProjectResource.php"
+			],
+			[
+				"domaineve",
+				"module/Core/src/Core/Entity/DomainEvent.php"
+			],
+			[
+				"entproperty",
+				"module/Listing/src/Listing/Entity/Property.php"
+			],
+			[
+				"entfeature",
+				"module/Core/src/Core/Entity/Featured.php"
+			],
+			[
+				"responseexception",
+				"vendor/ruflin/elastica/lib/Elastica/Exception/ResponseException.php"
+			],
+			[
+				"listinglistene",
+				"module/Listing/src/Listing/Event/Listener/ListingListener.php"
+			],
+			[
+				"entlisting",
+				"module/Listing/src/Listing/Entity/Listing.php"
+			],
+			[
+				"querylisting",
+				"module/Search/src/Search/Query/Listing.php"
+			],
+			[
+				"userres",
+				"module/Api/src/Api/V1/User/UserResource.php"
+			],
+			[
+				"registra",
+				"module/CRM/src/CRM/Service/Registration.php"
+			],
+			[
+				"service/user.ph",
+				"module/CRM/src/CRM/Service/User.php"
+			],
+			[
+				"listinglistener",
+				"module/Listing/src/Listing/Event/Listener/ListingListener.php"
+			],
+			[
+				"listingres",
+				"module/Api/src/Api/V1/Listing/ListingResource.php"
+			],
+			[
+				"listing.php",
+				"module/Listing/src/Listing/Entity/Listing.php"
+			],
+			[
+				"seores",
+				"module/Api/src/Api/V1/Seo/SeoResource.php"
+			],
+			[
+				"listingresourcetest.php",
+				"module/Api/test/ApiTest/V1/Listing/ListingResourceTest.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"### Known Issues"
+			]
+		],
+		"width": 912.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 274.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-12">
+      <form method="post">
+        <input type="text" id="typeSearchInput" placeholder="Type for search ..."><span id="searchStatus">...</span>
+      </form>
+      <div id="typeSearchResults">
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $('#typeSearchInput').on('keyup', function(event) {
+      var text = $('#typeSearchInput').val();
+      if (text.length >= 3) {
+        $('#searchStatus').html('...');
+        $.ajax({
+          url: "/search",
+          data: {keyword: text},
+          success: function(result){
+            $("#typeSearchResults").html(result);
+            $('#searchStatus').html('');
+          },
+          error: function (){
+            $('#searchStatus').html(':( Error!');
+          }
+        });
+      }
+    });
+  </script>
+{% endblock %}
