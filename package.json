@@ -1,0 +1,23 @@
+{
+  "name": "node-es-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon -e js,twig,css ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^4.0.0",
+    "elasticsearch": "^13.3.1",
+    "express": "~4.15.5",
+    "less-middleware": "~2.2.1",
+    "morgan": "~1.9.0",
+    "mysql": "^2.14.1",
+    "nodemon": "^1.12.1",
+    "serve-favicon": "~2.4.5",
+    "twig": "~0.10.3"
+  }
+}
