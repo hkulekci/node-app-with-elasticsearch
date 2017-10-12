@@ -48,3 +48,15 @@ exports.insert = function(product, callback) {
     callback(false, response);
   });
 };
+
+
+exports.delete = function(productId, callback) {
+  db.delete({
+    index: 'products',
+    type: 'product',
+    id: productId,
+  }, function (error, response) {
+    if (error) { callback(true, error); return; }
+    callback(false, response);
+  });
+};

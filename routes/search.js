@@ -31,7 +31,6 @@ router.get('/', function(req, res, next) {
 
     }
   }, function(err, results) {
-    console.log(results);
     res.render('search', results);
   });
 

@@ -6,7 +6,10 @@
   <div>
     <ul>
       {% for product in products %}
-        <li><a href="/product/id/{{product['id']}}">{{product['name']}}</a> <small>(<a href="/product/{{product['id']}}/edit">Edit</a>)</small></li>
+        <li>
+          <a href="/product/id/{{product['id']}}">{{product['name']}}</a>
+          <small>(<a href="/product/{{product['id']}}/edit">Edit</a> | <a href="/product/{{product['id']}}/delete">Delete</a>)</small>
+        </li>
       {% endfor %}
     </ul>
   </div>

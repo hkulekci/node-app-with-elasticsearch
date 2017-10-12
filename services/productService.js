@@ -117,3 +117,23 @@ exports.update = function(sqlData, callback) {
     });
   });
 };
+
+
+
+
+exports.delete = function(productId, callback) {
+  var sql = "DELETE FROM product_category WHERE product_id = ?;";
+  var params = [productId];
+  db.getConnection(function(err, connection) {
+    if(err) { console.log(err); callback(true); return; }
+    connection.query(sql, params, function(err, results, fields) {
+      if(err) { console.log(err); callback(true); return; }
+      var psql = "DELETE FROM products WHERE id = ?;";
+      var pparams = [productId];
+      connection.query(psql, pparams, function(err, results, fields) {
+        callback(false, results.changedRows);
+      });
+
+    });
+  });
+};

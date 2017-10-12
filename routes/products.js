@@ -92,6 +92,30 @@ router.post('/new', function(req, res, next) {
   );
 });
 
+router.get('/:id/delete', function(req, res, next) {
+  var params = req.params;
+
+  waterfall(
+    [
+      function(waterfallCallback) {
+        productService.delete(params.id, function(err, result) {
+          //TODO: check error status
+          waterfallCallback(false);
+        });
+      },
+      function(waterfallCallback) {
+        productSearchService.delete(params.id, function(err, result) {
+          //TODO: check error status
+          waterfallCallback(false);
+        });
+      }
+    ],
+    function(err, result) {
+      res.redirect('/product');
+    }
+  );
+});
+
 router.get('/:id/edit', function(req, res, next) {
   var params = req.params;
 
@@ -198,7 +222,6 @@ router.post('/:id/edit', function(req, res, next) {
       return;
     }
     );
-  
 });
 
 module.exports = router;
