@@ -37,10 +37,12 @@ PUT products/product/_mapping
       "type": "double"
     },
     "created_at": {
-      "type": "date"
+      "type": "date",
+      "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
     },
     "updated_at": {
-      "type": "date"
+      "type": "date",
+      "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
     },
     "categories": {
       "type": "object",
@@ -78,3 +80,7 @@ DELIMITER ;
 ```
 
 At the end, run logstash. `docker-compose up logstash`
+
+Known Issues : 
+
+ - Sometimes application stack without error while updating product

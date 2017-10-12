@@ -1,0 +1,43 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <form action="{{url}}" method="post">
+    <div class="form-group row">
+      <label for="product-name-input" class="col-2 col-form-label">Product Name</label>
+      <div class="col-10">
+        <input class="form-control" type="text" name="name" value="{{product['name']}}" id="product-name-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="product-description-input" class="col-2 col-form-label">Description</label>
+      <div class="col-10">
+        <textarea class="form-control" name="description" id="product-description-input">{{product['description']}}</textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="product-quantity-input" class="col-2 col-form-label">Quantity</label>
+      <div class="col-10">
+        <input class="form-control" type="number" name="quantity" value="{{product['quantity']}}" id="product-quantity-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="product-price-input" class="col-2 col-form-label">Price</label>
+      <div class="col-10">
+        <input class="form-control" type="text" name="price" value="{{product['price']}}" id="product-price-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="product-categories-input" class="col-2 col-form-label">Categories</label>
+      <div class="col-10">
+        <select class="form-control" id="product-categories-input" name="categories" multiple="multiple">
+          {% for category in categories %}
+            <option value="{{category['id']}}"{% if category['selected'] %}selected{% endif %}>{{category['name']}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+        <input type="submit" class="btn btn-success" value="Save">
+    </div>
+  </form>
+{% endblock %}

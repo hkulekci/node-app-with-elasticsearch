@@ -16,6 +16,7 @@
     "less-middleware": "~2.2.1",
     "morgan": "~1.9.0",
     "mysql": "^2.14.1",
+    "node-datetime": "^2.0.3",
     "nodemon": "^1.12.1",
     "serve-favicon": "~2.4.5",
     "twig": "~0.10.3"

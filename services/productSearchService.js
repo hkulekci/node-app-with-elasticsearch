@@ -36,3 +36,15 @@ exports.getRecords = function(params, callback) {
     return;
   });
 };
+
+exports.insert = function(product, callback) {
+  db.index({
+    index: 'products',
+    type: 'product',
+    id: product.id,
+    body: product
+  }, function (error, response) {
+    if (error) { callback(true, error); return; }
+    callback(false, response);
+  });
+};
