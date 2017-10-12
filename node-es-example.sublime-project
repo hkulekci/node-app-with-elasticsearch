@@ -3,9 +3,6 @@
 	[
 		{
 			"path": "."
-		},
-		{
-			"path": "/Volumes/webroot/github/elastic-docker"
 		}
 	],
 	"settings":
