@@ -52,7 +52,7 @@ router.post('/new', function(req, res, next) {
 
   waterfall(
     [
-      function(waterfallCallback) {
+      function(waterfallCallback) { // Saving Product to MySQL DB
         result = {};
         productService.insert(params, function(err, insertId) {
           if (err) { res.redirect('/product'); }
@@ -62,21 +62,21 @@ router.post('/new', function(req, res, next) {
           })
         });
       },
-      function(result, waterfallCallback) {
+      function(result, waterfallCallback) { // Getting Product Category From DB (Preparing for Elasticsearch)
         categoryService.getProductCategories(result.insertId, function(err, productCategories) {
           if (err) {}
           result.productCategories = productCategories;
           waterfallCallback(false, result);
         });
       },
-      function(result, waterfallCallback) {
+      function(result, waterfallCallback) { // Getting Product Data From MySQL DB (Preparing for Elasticsearch)
         productService.getRecord(result.insertId, function(err, product) {
           if (err) {}
           result.product = product;
           waterfallCallback(false, result);
         });
       },
-      function(result, waterfallCallback) {
+      function(result, waterfallCallback) { // Saving Product to Elasticsearch
         var product = result.product;
         product.categories = result.productCategories;
 
@@ -159,7 +159,7 @@ router.post('/:id/edit', function(req, res, next) {
 
   waterfall(
     [
-      function(waterfallCallback) {
+      function(waterfallCallback) { // Saving Product Data to MySQL DB
         productService.update(params, function(err, changedRows) {
           if (err) { res.redirect('/product'); }
           productService.upsertCategories(queryParams.id, categories, function(err) {
@@ -168,7 +168,7 @@ router.post('/:id/edit', function(req, res, next) {
           })
         });      
       },
-      function(waterfallCallback) {
+      function(waterfallCallback) { // Getting Product Categories Data from MySQL (Preparing for Elasticsearch)
         var result = {};
         categoryService.getProductCategories(params.id, function(err, productCategories) {
           if (err) {}
@@ -176,14 +176,14 @@ router.post('/:id/edit', function(req, res, next) {
           waterfallCallback(false, result);
         });
       },
-      function(result, waterfallCallback) {
+      function(result, waterfallCallback) { // Getting Product Data from MySQL  (Preparing for Elasticsearch)
         productService.getRecord(params.id, function(err, product) {
           if (err) {}
           result.product = product;
           waterfallCallback(false, result);
         });
       },
-      function(result, waterfallCallback) {
+      function(result, waterfallCallback) { // Saving Data to Elasticsearch
         var product = result.product;
         product.categories = result.productCategories;
 
