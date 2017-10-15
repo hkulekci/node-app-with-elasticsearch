@@ -1,11 +1,16 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <form method="post">
+        <input type="text" id="typeSearchInput" placeholder="Type for search ..." autofocus class="form-control">
+      </form>
+    </div>
+    <div class="col-1"><span id="searchStatus">...</span></div>
+  </div>
   <div class="row">
     <div class="col-12">
-      <form method="post">
-        <input type="text" id="typeSearchInput" placeholder="Type for search ..." autofocus><span id="searchStatus">...</span>
-      </form>
       <div id="typeSearchResults">
       </div>
     </div>
