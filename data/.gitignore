@@ -1,0 +1,5 @@
+mysql-data/*
+nodes/*
+
+!mysql-data/.gitkeep
+!nodes/.gitkeep

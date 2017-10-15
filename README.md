@@ -1,13 +1,31 @@
-## Node Elasticsearch Example
+# Node Elasticsearch Example
+
+## Starting Services
+
+```
+docker-compose up elasticsearch kibana
+docker-compose up mysql
+docker-compose up app
+```
 
 ## Database Structure and Initialization
 
-Please check `data/sample_data.sql` for our sample data.
+Connect the mysql container with following configuration:
+
+```
+Host: mysql
+User : root
+Password : 123456
+Port : 33060
+```
+
+And import `data/sample_data.sql` file for our sample data.
 
 
 ## Elastic Integration
 
-First of all create your `products` index and `product` type.
+Then use Kibana Console interface to be able to create your index. First of all 
+create your `products` index and `product` type.
 
 ```
 DELETE products

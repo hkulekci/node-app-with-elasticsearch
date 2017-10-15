@@ -1,0 +1,49 @@
+
+{
+  "template": "myindex*",
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "myindex": {
+      "dynamic_templates": [
+        {
+          "message_field": {
+            "mapping": {
+              "fielddata": {
+                "format": "disabled"
+              },
+              "omit_norms": true,
+              "type": "text"
+            },
+            "match_mapping_type": "string",
+            "match": "message"
+          }
+        },
+        {
+          "string_fields": {
+            "match_mapping_type": "string",
+            "match": "*",
+            "mapping": {
+              "fielddata": {
+                "format": "disabled"
+              },
+              "omit_norms": true,
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "_all": {
+        "enabled": true
+      }
+    }
+  },
+  "aliases": {}
+}
