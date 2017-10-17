@@ -1,8 +1,109 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <div class="row">
-    <h1>From Kibana</h1>
-    <iframe src="http://127.0.0.1:5601/app/kibana#/visualize/edit/c46522a0-a9d5-11e7-aba8-ad0a02c02284?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:'2015-11-29T04:09:45.541Z',mode:absolute,to:'2017-10-31T21:00:00.000Z'))&_a=(filters:!(),linked:!f,query:(query_string:(analyze_wildcard:!t,query:'*')),uiState:(),vis:(aggs:!((enabled:!t,id:'1',params:(field:quantity),schema:metric,type:sum),(enabled:!t,id:'2',params:(field:categories.name.keyword,order:desc,orderBy:'1',size:5),schema:segment,type:terms)),listeners:(),params:(addLegend:!t,addTooltip:!t,isDonut:!f,legendPosition:right),title:'New+Visualization',type:pie))" class="col-6 border-0"></iframe>
+<div class="row">
+  <div class="col-6">
+    <canvas id="firstChart" height="200"></canvas>
   </div>
+  <div class="col-6">
+    <canvas id="thirdChart" height="200"></canvas>
+  </div>
+  <div class="col-6">
+    <canvas id="secondChart" height="200"></canvas>
+  </div>
+  <div class="col-6">
+    <canvas id="fourthChart" height="200"></canvas>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<script type="text/javascript">
+
+var data1 = {
+    labels: [{{chart1['labels']}}],
+    datasets: [
+    {% for dataset in chart1['datasets'] %}
+      {
+        label: '{{dataset['label']}}',
+        data: [{{dataset['data']}}],
+        backgroundColor: [{{dataset['colors']}}],
+        borderWidth: 1
+      }
+    {% endfor %}
+    ]
+};
+
+var ctx = document.getElementById("firstChart");
+var firstChart = new Chart(ctx, {
+    type: 'bar',
+    data: data1,
+    options: {
+      responsive: true,
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero:true
+            }
+          }
+        ]
+      }
+    }
+});
+
+var data2 = {
+    labels: [{{chart2['labels']}}],
+    datasets: [
+    {% for dataset in chart2['datasets'] %}
+      {
+        label: '{{dataset['label']}}',
+        data: [{{dataset['data']}}],
+        borderWidth: 1
+      },
+    {% endfor %}
+    ]
+};
+
+var ctx = document.getElementById("secondChart");
+var secondChart = new Chart(ctx, {
+    type: 'line',
+    data: data2,
+    options: {
+      responsive: true,
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero:true
+            }
+          }
+        ]
+      } 
+    }
+});
+
+var data3 = {
+    labels: [{{chart3['labels']}}],
+    datasets: [
+    {% for dataset in chart3['datasets'] %}
+      {
+        label: '{{dataset['label']}}',
+        data: [{{dataset['data']}}],
+        backgroundColor: [{{dataset['colors']}}],
+        borderWidth: 1
+      },
+    {% endfor %}
+    ]
+};
+
+var ctx = document.getElementById("thirdChart");
+var thirdChart = new Chart(ctx, {
+    type: 'pie',
+    data: data3,
+    options: {
+      responsive: true
+    }
+});
+
+</script>
 {% endblock %}
