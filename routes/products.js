@@ -4,15 +4,33 @@ var productService = require('../services/productService');
 var categoryService = require('../services/categoryService');
 var waterfall = require('async/waterfall');
 var productSearchService = require('../services/productSearchService');
+var redisClient = require('../libraries/redis-client');
+var md5 = require('blueimp-md5');
 
 /* GET products listing. */
 router.get('/', function(req, res, next) {
-  var queryParams = req.query
-  productService.getRecords(queryParams, function(err, results) {
-    if(err) { res.send(500,"Server Error"); return; }
-    // Respond with results as JSON
-    res.render('products', {'title': 'Products', products: results, 'totalCount': results.length});
-  });
+  var queryParams = req.query;
+  waterfall([
+    function(waterfallCallback) {
+      redisClient.get(md5(queryParams), function(err, results) {
+        if (err) { console.log(err); waterfallCallback(); return; }
+        if (results) {
+          res.render('products', {'title': 'Products', products: results, 'totalCount': results.length, 'cache': true});
+          return;
+        }
+        waterfallCallback();
+      });
+    },
+    function(waterfallCallback) {
+      productService.getRecords(queryParams, function(err, results) {
+        if(err) { res.send(500,"Server Error"); return; }
+        redisClient.set(md5(queryParams), results, 100);
+        // Respond with results as JSON
+        res.render('products', {'title': 'Products', products: results, 'totalCount': results.length,  'cache': false});
+
+      });
+    }
+  ]);
 });
 
 /* GET products listing. */

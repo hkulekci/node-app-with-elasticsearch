@@ -2,7 +2,7 @@
 
 {% block body %}
   <a href="/product/new" class="float-right">New Product</a>
-  <h1>{{title}} <sup><small>(Total : {{totalCount}})</small></sup></h1>
+  <h1>{{title}} <sup><small>(Total : {{totalCount}} | Cache: {% if cache %}true{% else %}false{% endif %})</small></sup></h1>
   <div>
     <ul>
       {% for product in products %}
