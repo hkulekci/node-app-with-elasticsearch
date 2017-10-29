@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon -e js,twig,css ./bin/www"
+    "start": "nodemon -e js,twig,css ./bin/www",
+    "listen": "nodemon -e queue-listener.js ./queue-listener.js"
   },
   "dependencies": {
     "async": "^2.5.0",
@@ -16,11 +17,12 @@
     "express": "~4.15.5",
     "less-middleware": "~2.2.1",
     "morgan": "~1.9.0",
-    "mysql": "^2.14.1",
+    "mysql": "^2.15.0",
     "node-datetime": "^2.0.3",
     "nodemon": "^1.12.1",
     "redis": "^2.8.0",
     "serve-favicon": "~2.4.5",
+    "simple-redis-queue": "git+ssh://git@github.com/hkulekci/node-simple-redis-queue.git",
     "twig": "~0.10.3"
   }
 }

@@ -2,6 +2,10 @@ var redis = require('redis');
   client = redis.createClient({'host': 'redis'});
 
 var RedisClient = {
+  getClient: function() {
+    return client;
+  },
+
   push: function(key, value, callback) {
     client.lpush(key, value, function(err, result) {
       callback(err, result);

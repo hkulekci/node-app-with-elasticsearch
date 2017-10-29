@@ -4,8 +4,8 @@
 
 ```
 docker-compose up elasticsearch kibana
-docker-compose up mysql
-docker-compose up app
+docker-compose up mysql redis
+docker-compose up app listener
 ```
 
 ## Database Structure and Initialization
@@ -20,6 +20,12 @@ Port : 33060
 ```
 
 And import `data/sample_data.sql` file for our sample data.
+
+Redis configuration :
+
+```
+Host: redis
+```
 
 
 ## Elastic Integration

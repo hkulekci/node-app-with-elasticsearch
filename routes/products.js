@@ -6,6 +6,9 @@ var waterfall = require('async/waterfall');
 var productSearchService = require('../services/productSearchService');
 var redisClient = require('../libraries/redis-client');
 var md5 = require('blueimp-md5');
+var RedisQueue = require("simple-redis-queue");
+
+var push_queue = new RedisQueue(redisClient.getClient());
 
 /* GET products listing. */
 router.get('/', function(req, res, next) {
@@ -80,32 +83,15 @@ router.post('/new', function(req, res, next) {
           })
         });
       },
-      function(result, waterfallCallback) { // Getting Product Category From DB (Preparing for Elasticsearch)
-        categoryService.getProductCategories(result.insertId, function(err, productCategories) {
-          if (err) {}
-          result.productCategories = productCategories;
+      function(result, waterfallCallback) {
+        push_queue.push('product_updates', {'action':'insert', 'productId': result.insertId}, function(err, res) {
           waterfallCallback(false, result);
-        });
-      },
-      function(result, waterfallCallback) { // Getting Product Data From MySQL DB (Preparing for Elasticsearch)
-        productService.getRecord(result.insertId, function(err, product) {
-          if (err) {}
-          result.product = product;
-          waterfallCallback(false, result);
-        });
-      },
-      function(result, waterfallCallback) { // Saving Product to Elasticsearch
-        var product = result.product;
-        product.categories = result.productCategories;
-
-        productSearchService.insert(product, function() {
-          waterfallCallback(false, product);
         });
       }
     ],
-    function(err, product) {
+    function(err, result) {
       if (err) {}
-      res.redirect('/product/id/'+product.id);
+      res.redirect('/product/id/'+result.insertId);
     }
   );
 });
@@ -122,8 +108,7 @@ router.get('/:id/delete', function(req, res, next) {
         });
       },
       function(waterfallCallback) {
-        productSearchService.delete(params.id, function(err, result) {
-          //TODO: check error status
+        push_queue.push('product_updates', {'action':'delete', 'productId': params.id}, function(err, res) {
           waterfallCallback(false);
         });
       }
@@ -210,33 +195,15 @@ router.post('/:id/edit', function(req, res, next) {
           })
         });      
       },
-      function(waterfallCallback) { // Getting Product Categories Data from MySQL (Preparing for Elasticsearch)
-        var result = {};
-        categoryService.getProductCategories(params.id, function(err, productCategories) {
-          if (err) {}
-          result.productCategories = productCategories;
-          waterfallCallback(false, result);
-        });
-      },
-      function(result, waterfallCallback) { // Getting Product Data from MySQL  (Preparing for Elasticsearch)
-        productService.getRecord(params.id, function(err, product) {
-          if (err) {}
-          result.product = product;
-          waterfallCallback(false, result);
-        });
-      },
-      function(result, waterfallCallback) { // Saving Data to Elasticsearch
-        var product = result.product;
-        product.categories = result.productCategories;
-
-        productSearchService.insert(product, function() {
-          waterfallCallback(false, product);
+      function(waterfallCallback) {
+        push_queue.push('product_updates', {'action':'update', 'productId': queryParams.id}, function(err, res) {
+          waterfallCallback(false);
         });
       }
     ],
     function(err, product) {
       if (err) {}
-      res.redirect('/product/id/' + product.id);
+      res.redirect('/product/id/' + queryParams.id);
       return;
     }
     );
