@@ -75,7 +75,7 @@ PUT products/product/_mapping
           "type": "long"
         },
         "name": {
-          "type": "text"
+          "type": "keyword"
         }
       }
     }

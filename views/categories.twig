@@ -2,11 +2,22 @@
 
 {% block body %}
   <h1>{{title}}</h1>
-  <div>
-    <ul>
-      {% for category in categories %}
-        <li><a href="/product?category={{category['id']}}">{{category['name']}}</a></li>
-      {% endfor %}
-    </ul>
+  <div class="row">
+    <div class="col-6">
+      <h4>From DB</h4>
+      <ul>
+        {% for category in categories %}
+          <li><a href="/product?category={{category['id']}}">{{category['name']}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-6">
+      <h4>From ES</h4>
+      <ul>
+        {% for category in esCategories %}
+          <li><a href="/product?category={{category['id']}}">{{category['name']}} [{{category['count']}}]</a></li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 {% endblock %}
