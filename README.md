@@ -40,7 +40,23 @@ PUT products
 {
   "settings": {
     "number_of_shards": 1,
-    "number_of_replicas": 0
+    "number_of_replicas": 0,
+    "analysis": {
+      "analyzer": {
+        "autocomplete_analyzer" : {
+          "type" : "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "autocomplete_filter"]
+        }
+      },
+      "filter": {
+        "autocomplete_filter": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 10
+        }
+      }
+    }
   }
 }
 
@@ -49,10 +65,24 @@ PUT products/product/_mapping
 {
   "properties": {
     "name": {
-      "type": "text"
+      "type": "text",
+      "fields": {
+        "autocomplete": {
+          "type": "text", 
+          "analyzer": "autocomplete_analyzer",
+          "search_analyzer": "standard"
+        }
+      }
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "fields": {
+        "autocomplete": {
+          "type": "text", 
+          "analyzer": "autocomplete_analyzer",
+          "search_analyzer": "standard"
+        }
+      }
     },
     "quantity": {
       "type": "long"
@@ -75,7 +105,14 @@ PUT products/product/_mapping
           "type": "long"
         },
         "name": {
-          "type": "keyword"
+          "type": "keyword",
+          "fields": {
+            "autocomplete": {
+              "type": "text", 
+              "analyzer": "autocomplete_analyzer",
+              "search_analyzer": "standard"
+            }
+          }
         }
       }
     }

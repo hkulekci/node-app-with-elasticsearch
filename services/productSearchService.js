@@ -2,8 +2,7 @@ var db = require('./../libraries/elasticsearch');
 
 exports.getRecords = function(params, callback) {
   body = {
-    query: {
-    },
+    query: {},
     size: 50
   };
 
@@ -17,8 +16,9 @@ exports.getRecords = function(params, callback) {
 
   if (params.keyword) {
     body.query.query_string = {
-      "fields": ["name^4", "description^2", "categories.name^3"],
-      "query": params.keyword
+      "fields": ["name.autocomplete^10", "description.autocomplete^2", "categories.name.autocomplete^3"],
+      "query": params.keyword,
+      "default_operator": "AND"
     };
   }
 
