@@ -32,12 +32,13 @@ services:
             - "5044:5044"
         links:
             - elasticsearch
+            - mysql
 
     mysql:
         image: "mysql:5.7.19"
         restart: always
         ports: 
-            - "33060:3306"
+            - "33060:33060"
         environment:
             MYSQL_ROOT_PASSWORD: "123456"
         volumes:
