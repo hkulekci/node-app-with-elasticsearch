@@ -15,11 +15,56 @@ exports.getRecords = function(params, callback) {
   }
 
   if (params.keyword) {
-    body.query.query_string = {
-      "fields": ["name.autocomplete^10", "description.autocomplete^2", "categories.name.autocomplete^3"],
-      "query": params.keyword,
-      "default_operator": "AND"
+    body.query.bool = {
+      "must": []
     };
+
+    var terms = params.keyword.split(' ');
+    for (var i = 0; i < terms.length; i++) {
+      if (!terms[i]) {
+        // ignore empty term
+        continue;
+      }
+      body.query.bool.must.push({
+        "bool": {
+          "should": [
+            {
+              "fuzzy" : {
+                "name.autocomplete" : {
+                  "value": terms[i],
+                  "boost": 10.0,
+                  "fuzziness": 1,
+                  "prefix_length": 0,
+                  "max_expansions": 100
+                }
+              }
+            },
+            {
+              "fuzzy" : {
+                "description.autocomplete" : {
+                  "value": terms[i],
+                  "boost": 2.0,
+                  "fuzziness": 1,
+                  "prefix_length": 0,
+                  "max_expansions": 100
+                }
+              }
+            },
+            {
+              "fuzzy" : {
+                "category.name.autocomplete" : {
+                  "value": terms[i],
+                  "boost": 3.0,
+                  "fuzziness": 1,
+                  "prefix_length": 0,
+                  "max_expansions": 100
+                }
+              }
+            }
+          ]
+        }
+      });
+    } // end of for
   }
 
   db.search({
