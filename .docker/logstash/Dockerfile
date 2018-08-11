@@ -1,8 +1,7 @@
-FROM docker.elastic.co/logstash/logstash:5.6.2
+FROM docker.elastic.co/logstash/logstash:6.2.4
 
 WORKDIR /usr/share/logstash
 RUN bin/logstash-plugin install logstash-input-jdbc
-RUN bin/logstash-plugin remove x-pack
 RUN bin/logstash-plugin install logstash-filter-json_encode
 RUN bin/logstash-plugin install logstash-filter-json
 RUN bin/logstash-plugin install logstash-filter-mutate
