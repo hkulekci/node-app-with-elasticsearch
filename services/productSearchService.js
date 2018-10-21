@@ -1,5 +1,34 @@
 var db = require('./../libraries/elasticsearch');
 
+exports.getSuggestions = function(keyword, callback) {
+  body = {
+    "suggest": {
+      "suggest": {
+        "completion": {
+          "field": "completion",
+          "size": 10,
+          "skip_duplicates": true
+        },
+        "text": keyword
+      }
+    }
+  };
+
+  db.search({
+    index: 'products',
+    type: 'product',
+    body: body
+  }).then(function (resp) {
+    var hits = resp.suggest.suggest[0];
+    callback(false, hits);
+    return;
+  }, function (err) {
+    callback(true);
+    console.trace(err.message);
+    return;
+  });
+}
+
 exports.getRecords = function(params, callback) {
   body = {
     query: {},

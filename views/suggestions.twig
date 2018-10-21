@@ -1,0 +1,3 @@
+{% for suggestion in suggestions %}
+  <a href="#" class="autocomplete-suggestions badge badge-warning" rel-search-text="{{suggestion['search-text']}}">{{suggestion['suggest']}}</a>
+{% endfor %}

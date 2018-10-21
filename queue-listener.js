@@ -32,6 +32,11 @@ var upsertOperation = function(productId, functionCallback) {
       var product = result.product;
       product.categories = result.productCategories;
 
+      var input = product.name.trim().split(' ');
+      product.completion = {
+        "input": input
+      };
+
       productSearchService.insert(product, function() {
         waterfallCallback(false, product);
       });

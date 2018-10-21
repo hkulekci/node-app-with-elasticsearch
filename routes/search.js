@@ -37,4 +37,29 @@ router.get('/', function(req, res, next) {
   return;
 });
 
+router.get('/suggest', function(req, res, next) {
+  var queryParams = req.query
+  var terms = queryParams.keyword.trim().split(' ');
+  var keyword = terms.pop();
+
+  productSearchService.getSuggestions(keyword, function(err, results) {
+    if(err) { res.send(500, "Server Error"); return; }
+    var data = {'suggestions':[]};
+    for (p in results.options) {
+      var tempTerms = terms.slice(0);
+      tempTerms.push(results.options[p].text);
+      var searchText = tempTerms.join(' ');
+
+      data.suggestions.push({
+        'search-text': searchText,
+        'suggest': results.options[p].text
+      });
+    }
+
+    res.render('suggestions', data);
+  });
+
+  return;
+});
+
 module.exports = router;

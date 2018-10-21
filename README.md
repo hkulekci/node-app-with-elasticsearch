@@ -47,6 +47,15 @@ PUT products
           "type" : "custom",
           "tokenizer": "standard",
           "filter": ["lowercase", "autocomplete_filter"]
+        },
+        "default_search": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "standard",
+            "lowercase",
+            "asciifolding"
+          ]
         }
       },
       "filter": {
@@ -115,6 +124,11 @@ PUT products/product/_mapping
           }
         }
       }
+    },
+    "completion": {
+      "type": "completion",
+      "analyzer": "default_search",
+      "search_analyzer": "default_search"
     }
   }
 }

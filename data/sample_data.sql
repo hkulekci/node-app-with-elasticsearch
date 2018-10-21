@@ -1526,7 +1526,13 @@ BEGIN
   SELECT
     p.*,
     
-    CAST( (CONCAT ('[', GROUP_CONCAT(CONCAT('{"id":', c.id, ', "name":"',c.name,'"}')), ']'))  AS JSON) categories
+    CAST( (CONCAT ('[', GROUP_CONCAT(CONCAT('{"id":', c.id, ', "name":"',c.name,'"}')), ']'))  AS JSON) categories,
+    
+    CAST(CONCAT('{"input": ["', REPLACE(
+      TRIM(TRIM(BOTH '"' FROM TRIM(p.name))),
+      ' ',
+      '","'
+    ), '"]}') AS JSON) completion
     FROM products p LEFT JOIN product_category pc ON pc.product_id = p.id LEFT JOIN categories c ON c.id = pc.category_id
   WHERE p.updated_at > currentdate GROUP BY p.id;
 END //
