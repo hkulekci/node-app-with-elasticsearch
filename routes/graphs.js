@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var productGraphService = require('../services/productGraphService');
-var waterfall = require('async/waterfall');
+const express = require('express');
+const router = express.Router();
+const productGraphService = require('../services/productGraphService');
+const waterfall = require('async/waterfall');
 
 var dynamicColors = function() {
   var r = Math.floor(Math.random() * 255);
@@ -18,8 +18,8 @@ router.get('/', function(req, res, next) {
       function(waterfallCallback) {
         productGraphService.getProductCountByDate({}, function(err, result) {
           if(err) { waterfallCallback(true, {}); }
-          var colors = [];
-          for (var i in result['vals']) {
+          let colors = [];
+          for (let i in result['vals']) {
             colors.push(dynamicColors());
           }
           waterfallCallback(false, {"chart1": {'labels':'"' + result['keys'].join('","') + '"', 'datasets': [ {'data': result['vals'].join(','), 'label': 'Num of Product', 'colors': '"'+colors.join('","')+'"'} ]}});

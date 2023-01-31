@@ -7,23 +7,23 @@
     "listen": "nodemon -e queue-listener.js ./queue-listener.js"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^8.6.0",
     "async": "^2.6.2",
     "blueimp-md5": "^2.10.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^4.0.0",
-    "elasticsearch": "^15.5.0",
     "express": "^4.16.4",
     "extend": ">=3.0.2",
     "less-middleware": "~3.0.1",
     "morgan": "^1.9.1",
-    "mysql": "^2.17.1",
+    "mysql2": "^3.1.0",
     "node-datetime": "^2.1.2",
-    "nodemon": "^1.19.0",
-    "redis": "^2.8.0",
+    "nodemon": "^2.0.20",
+    "redis": "^4.6.4",
+    "redis-smq": "^7.2.0",
     "serve-favicon": "~2.4.5",
-    "simple-redis-queue": "git+ssh://git@github.com/hkulekci/node-simple-redis-queue.git",
     "twig": "~0.10.3"
   }
 }

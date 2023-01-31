@@ -16,10 +16,9 @@ exports.getSuggestions = function(keyword, callback) {
 
   db.search({
     index: 'products',
-    type: 'product',
     body: body
   }).then(function (resp) {
-    var hits = resp.suggest.suggest[0];
+    let hits = resp.suggest.suggest[0];
     callback(false, hits);
     return;
   }, function (err) {
@@ -48,8 +47,8 @@ exports.getRecords = function(params, callback) {
       "must": []
     };
 
-    var terms = params.keyword.split(' ');
-    for (var i = 0; i < terms.length; i++) {
+    let terms = params.keyword.split(' ');
+    for (let i = 0; i < terms.length; i++) {
       if (!terms[i]) {
         // ignore empty term
         continue;
@@ -98,10 +97,9 @@ exports.getRecords = function(params, callback) {
 
   db.search({
     index: 'products',
-    type: 'product',
     body: body
   }).then(function (resp) {
-    var hits = resp.hits;
+    let hits = resp.hits;
     callback(false, hits);
     return;
   }, function (err) {
@@ -111,23 +109,19 @@ exports.getRecords = function(params, callback) {
   });
 };
 
-exports.insert = function(product, callback) {
-  db.index({
+exports.insert = async function(product, callback) {
+  const response = await db.index({
     index: 'products',
-    type: 'product',
     id: product.id,
     body: product
-  }, function (error, response) {
-    if (error) { callback(true, error); return; }
-    callback(false, response);
   });
+  callback(false, response);
 };
 
 
 exports.delete = function(productId, callback) {
   db.delete({
     index: 'products',
-    type: 'product',
     id: productId,
   }, function (error, response) {
     if (error) { callback(true, error); return; }

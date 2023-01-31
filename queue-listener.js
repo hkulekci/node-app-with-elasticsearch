@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-var productService = require('./services/productService');
-var categoryService = require('./services/categoryService');
-var productSearchService = require('./services/productSearchService');
-var redisClient = require('./libraries/redis-client');
-var RedisQueue = require("simple-redis-queue");
-var waterfall = require('async/waterfall');
+const productService = require('./services/productService');
+const categoryService = require('./services/categoryService');
+const productSearchService = require('./services/productSearchService');
+const redisClient = require('./libraries/redis-client');
+const { Consumer } = require("redis-smq");
+const waterfall = require('async/waterfall');
 
-var pop_queue = new RedisQueue(redisClient.getClient());
+const pop_queue = new Consumer();
 
-var upsertOperation = function(productId, functionCallback) {
+const upsertOperation = function(productId, functionCallback) {
   waterfall([
     // Insert Operation
     function(waterfallCallback) { // Getting Product Category From DB (Preparing for Elasticsearch)
-      var result = {};
+      let result = {};
       categoryService.getProductCategories(productId, function(err, productCategories) {
         if (err) {}
         result.productCategories = productCategories;
@@ -29,54 +29,54 @@ var upsertOperation = function(productId, functionCallback) {
       });
     },
     function(result, waterfallCallback) { // Saving Product to Elasticsearch
-      var product = result.product;
+      let product = result.product;
       product.categories = result.productCategories;
 
-      var input = product.name.trim().split(' ');
+      let input = product.name.trim().split(' ');
       product.completion = {
         "input": input
       };
-
       productSearchService.insert(product, function() {
         waterfallCallback(false, product);
       });
     },
-    function(err, result) {
-      functionCallback(err, result);
-    }
-  ]);
+  ],
+  function(err, result) {
+    functionCallback(err, result);
+  });
 };
 
-var deleteOperation = function(productId, functionCallback) {
+const deleteOperation = function(productId, functionCallback) {
     // Delete Operation
     productSearchService.delete(productId, function(err, result) {
       functionCallback(false);
     });
 };
 
-
 /***** Redis Message Queue Listener ******/
-pop_queue.on("message", function (queueName, payload) {
-  var messageData = JSON.parse(payload);
-  if (messageData.action == 'update' || messageData.action == 'insert') {
-    upsertOperation(messageData.productId, function() {
-      console.log('[' + queueName + '] - Processed! - ' + payload);
-      pop_queue.next("product_updates");
-    });
-  } else if (messageData.action == 'delete') {
-    deleteOperation(messageData.productId, function() {
-      console.log('[' + queueName + '] - Processed! - ' + payload);
-      pop_queue.next("product_updates");
-    });
-  } else {
-    console.log('[' + queueName + '] - Not Processed! - ' + payload);
-    pop_queue.next("product_updates");
+pop_queue.consume(
+  'product_updates',
+  function (payload, nextCallback) {
+    const messageData = JSON.parse(payload);
+    if (messageData.action === 'update' || messageData.action === 'insert') {
+      upsertOperation(messageData.productId, function() {
+        console.log('[product_updates] - Processed! - ' + payload);
+        nextCallback()
+      });
+    } else if (messageData.action === 'delete') {
+      deleteOperation(messageData.productId, function() {
+        console.log('[product_updates] - Processed! - ' + payload);
+        nextCallback()
+      });
+    } else {
+      console.log('[product_updates] - Not Processed! - ' + payload);
+      nextCallback()
+    }
+  },
+  (err) => {
+    if (err) console.error(err);
   }
-});
+  );
 
-// Listen for errors
-pop_queue.on("error", function (error) {
-    console.log("pop_queue Error : " + error);
-});
 
-pop_queue.next("product_updates");
+pop_queue.run();

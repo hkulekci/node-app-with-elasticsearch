@@ -1,13 +1,13 @@
-var db = require('./../libraries/elasticsearch');
+const db = require('./../libraries/elasticsearch');
 
 exports.getProductCountByDate = function(params, callback) {
-  body = {
+  const body = {
     "size": 0, 
     "aggs": {
       "product_counts": {
         "date_histogram": {
           "field": "created_at",
-          "interval": "week"
+          "calendar_interval": "week"
         }
       }
     }
@@ -15,15 +15,15 @@ exports.getProductCountByDate = function(params, callback) {
 
   db.search({
     index: 'products',
-    type: 'product',
     body: body
   }).then(function (resp) {
-    var aggs = resp.aggregations.product_counts.buckets;
-    var result = {
+    console.log(resp)
+    let aggs = resp.aggregations.product_counts.buckets;
+    let result = {
       "keys": [],
       "vals": []
     };
-    for (i in aggs) {
+    for (const i in aggs) {
       result['keys'].push(aggs[i].key_as_string);
       result['vals'].push(aggs[i].doc_count);
     }

@@ -1,13 +1,13 @@
-var db = require('./../libraries/database');
-var dateTime = require('node-datetime');
-var every = require('async/every');
-var waterfall = require('async/waterfall');
+const db = require('./../libraries/database');
+const dateTime = require('node-datetime');
+const every = require('async/every');
+const waterfall = require('async/waterfall');
 
 exports.getRecords = function(params, callback) {
-  var sql = "SELECT p.* FROM products p LEFT JOIN product_category pc ON pc.product_id = p.id LEFT JOIN categories c ON c.id = pc.category_id";
-  var sqlParams = [];
+  let sql = "SELECT p.* FROM products p LEFT JOIN product_category pc ON pc.product_id = p.id LEFT JOIN categories c ON c.id = pc.category_id";
+  let sqlParams = [];
 
-  var sqlExtras = [];
+  let sqlExtras = [];
   if (params.category) {
     sqlExtras.push({'sql': ' WHERE pc.category_id = ?', 'params': [params.category]});
   }
@@ -15,9 +15,9 @@ exports.getRecords = function(params, callback) {
     sqlExtras.push({'sql': ' WHERE (p.name LIKE ? OR p.description LIKE ?)', 'params': ['%'+params.keyword+'%', '%'+params.keyword+'%']});
   }
   if (sqlExtras.length >= 1) {
-    for (e in sqlExtras) {
+    for (let e in sqlExtras) {
       sql += sqlExtras[e].sql;
-      for (p in sqlExtras[e].params) {
+      for (let p in sqlExtras[e].params) {
         sqlParams.push(sqlExtras[e].params[p]);
       }
     }
@@ -37,7 +37,7 @@ exports.getRecords = function(params, callback) {
 };
 
 exports.getRecord = function(id, callback) {
-  var sql = "SELECT * FROM products WHERE id = ?";
+  const sql = "SELECT * FROM products WHERE id = ?";
   // get a connection from the pool
   db.getConnection(function(err, connection) {
     if(err) { console.log(err); callback(true); return; }
@@ -56,11 +56,11 @@ exports.getRecord = function(id, callback) {
 };
 
 exports.insert = function(sqlData, callback) {
-  var dt = dateTime.create();
-  var formatted = dt.format('Y-m-d H:M:S');
+  const dt = dateTime.create();
+  const formatted = dt.format('Y-m-d H:M:S');
 
   sqlData.updated_at = formatted;
-  var sql = "INSERT INTO products SET ?";
+  const sql = "INSERT INTO products SET ?";
   db.getConnection(function(err, connection) {
     if(err) { console.log(err); callback(true); return; }
     connection.query(sql, sqlData, function(err, results, fields) {
@@ -85,7 +85,7 @@ exports.upsertCategories = function(productId, categories, callback) {
       },
       function(waterfallCallback) {
         every(categories, function(category, eachCallback) {
-          var sql = "INSERT INTO product_category SET ?";
+          let sql = "INSERT INTO product_category SET ?";
           db.getConnection(function(err, connection) {
             if(err) { console.log(err); eachCallback(true); return; }
             connection.query(sql, {'product_id': productId, 'category_id': category}, function(err, results, fields) {
@@ -107,12 +107,12 @@ exports.upsertCategories = function(productId, categories, callback) {
 
 
 exports.update = function(sqlData, callback) {
-  var sql = "UPDATE products SET name = ?, description = ?, price = ?, quantity = ? WHERE id = ?;";
-  var params = [sqlData.name, sqlData.description, sqlData.price, sqlData.quantity, sqlData.id];
+  let sql = "UPDATE products SET name = ?, description = ?, price = ?, quantity = ? WHERE id = ?;";
+  let params = [sqlData.name, sqlData.description, sqlData.price, sqlData.quantity, sqlData.id];
   db.getConnection(function(err, connection) {
-    if(err) { console.log(err); callback(true); return; }
+    if (err) { console.log(err); callback(true); return; }
     connection.query(sql, params, function(err, results, fields) {
-      if(err) { console.log(err); callback(true); return; }
+      if (err) { console.log(err); callback(true); return; }
       callback(false, results.changedRows);
     });
   });
@@ -122,14 +122,14 @@ exports.update = function(sqlData, callback) {
 
 
 exports.delete = function(productId, callback) {
-  var sql = "DELETE FROM product_category WHERE product_id = ?;";
-  var params = [productId];
+  let sql = "DELETE FROM product_category WHERE product_id = ?;";
+  let params = [productId];
   db.getConnection(function(err, connection) {
     if(err) { console.log(err); callback(true); return; }
     connection.query(sql, params, function(err, results, fields) {
       if(err) { console.log(err); callback(true); return; }
-      var psql = "DELETE FROM products WHERE id = ?;";
-      var pparams = [productId];
+      let psql = "DELETE FROM products WHERE id = ?;";
+      let pparams = [productId];
       connection.query(psql, pparams, function(err, results, fields) {
         callback(false, results.changedRows);
       });

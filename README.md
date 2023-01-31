@@ -52,7 +52,6 @@ PUT products
           "type": "custom",
           "tokenizer": "standard",
           "filter": [
-            "standard",
             "lowercase",
             "asciifolding"
           ]
@@ -70,7 +69,7 @@ PUT products
 }
 
 
-PUT products/product/_mapping
+PUT products/_mapping
 {
   "properties": {
     "name": {

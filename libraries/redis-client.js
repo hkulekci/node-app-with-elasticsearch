@@ -1,7 +1,9 @@
 var redis = require('redis');
-  client = redis.createClient({'host': 'redis'});
+  client = redis.createClient({'host': process.env.REDIS_HOST});
 
-var RedisClient = {
+await client.connect();
+
+const RedisClient = {
   getClient: function() {
     return client;
   },

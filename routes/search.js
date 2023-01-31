@@ -19,14 +19,13 @@ router.get('/', function(req, res, next) {
 
     },
     elastic: function(callback) {
-      
       productSearchService.getRecords(queryParams, function(err, results) {
         if(err) { res.send(500, "Server Error"); return; }
         var products = [];
         for (p in results.hits) {
           products.push(results.hits[p]._source);
         }
-        callback(null, {'products': products, 'totalCount': results.total});
+        callback(null, {'products': products, 'totalCount': results.total.value});
       });
 
     }
@@ -38,17 +37,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/suggest', function(req, res, next) {
-  var queryParams = req.query
-  var terms = queryParams.keyword.trim().split(' ');
-  var keyword = terms.pop();
+  let queryParams = req.query
+  let terms = queryParams.keyword.trim().split(' ');
+  let keyword = terms.pop();
 
   productSearchService.getSuggestions(keyword, function(err, results) {
-    if(err) { res.send(500, "Server Error"); return; }
-    var data = {'suggestions':[]};
+    if (err) { res.send(500, "Server Error"); return; }
+    let data = {'suggestions':[]};
     for (p in results.options) {
-      var tempTerms = terms.slice(0);
+      let tempTerms = terms.slice(0);
       tempTerms.push(results.options[p].text);
-      var searchText = tempTerms.join(' ');
+      let searchText = tempTerms.join(' ');
 
       data.suggestions.push({
         'search-text': searchText,
