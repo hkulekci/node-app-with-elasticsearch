@@ -29,8 +29,8 @@ router.get('/', function(req, res, next) {
       function(data, waterfallCallback) {
         productGraphService.getProductQuantities({}, function(err, result) {
           if(err) { waterfallCallback(true, {}); }
-          var colors = [];
-          for (var i in result['vals']) {
+          let colors = [];
+          for (let i in result['vals']) {
             colors.push(dynamicColors());
           }
           data['chart2'] = {'labels':'"' + result['keys'].join('","') + '"', 'datasets': [ {'data': result['vals'].join(','), 'label': 'Total Product Quantity', 'colors': '"'+colors.join('","')+'"'}, {'data': result['counts'].join(','), 'label': 'Num of Product'} ]};
@@ -41,13 +41,13 @@ router.get('/', function(req, res, next) {
       function(data, waterfallCallback) {
         productGraphService.getCategoriyQuantitySum({}, function(err, result) {
           if(err) { waterfallCallback(true, {}); }
-          var colors1 = [];
-          var colors2 = [];
-          for (var i in result['vals']) {
+          let colors1 = [];
+          let colors2 = [];
+          for (let i in result['vals']) {
             colors1.push(dynamicColors());
           }
 
-          for (var i in result['counts']) {
+          for (let i in result['counts']) {
             colors2.push(dynamicColors());
           }
           data['chart3'] = {'labels':'"' + result['keys'].join('","') + '"', 'datasets': [ {'data': result['vals'].join(','), 'label': 'Total Quantity of Category', 'colors': '"'+colors1.join('","')+'"'  }, {'data': result['counts'].join(','), 'label': 'Num of Product by Category', 'colors': '"'+colors2.join('","')+'"'} ]};

@@ -1,10 +1,11 @@
-var redis = require('redis');
-  client = redis.createClient({'host': process.env.REDIS_HOST});
-
-await client.connect();
+const redis = require('redis');
+  client = redis.createClient({'url': process.env.REDIS_HOST});
 
 const RedisClient = {
   getClient: function() {
+    if (!client.isOpen) {
+      client.connect().then()
+    }
     return client;
   },
 
@@ -26,14 +27,17 @@ const RedisClient = {
     }
   },
 
-  get: function(key, callback) {
-    client.get(key, function(err, result) {
-      if (result) {
-        callback(err, JSON.parse(result));
-        return;
-      }
-      callback(true, {});
-    });
+  get: async function(key) {
+    if (!client.isOpen) {
+      await client.connect()
+    }
+    const value = await client.get(key);
+
+    if (value !== null) {
+      return JSON.parse(value);
+    }
+
+    return null;
   },
 
   delete: function() {

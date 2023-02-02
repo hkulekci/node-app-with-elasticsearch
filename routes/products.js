@@ -1,69 +1,46 @@
-var express = require('express');
-var router = express.Router();
-var productService = require('../services/productService');
-var categoryService = require('../services/categoryService');
-var waterfall = require('async/waterfall');
-var productSearchService = require('../services/productSearchService');
-var redisClient = require('../libraries/redis-client');
-var md5 = require('blueimp-md5');
-const { Message, Producer } = require('redis-smq');
+const express = require('express');
+const router = express.Router();
+const productService = require('../services/productService');
+const categoryService = require('../services/categoryService');
+const waterfall = require('async/waterfall');
+const productSearchService = require('../services/productSearchService');
+const redisClient = require('../libraries/redis-client');
+const md5 = require('blueimp-md5');
+const RedisQueue = require('hkulekci-simple-redis-queue');
 
-const pushQueue = (data, callback) => {
-  const producer = new Producer();
-  producer.run((err) => {
-    if (err) throw err;
-    const message = new Message();
-    message
-      .setBody(data)
-      .setQueue('product_updates'); // setting up a direct exchange
-    message.getId() // null
-    producer.produce(message, (err) => {
-      if (err) {
-        console.log(err);
-        callback(true, err)
-      }
-      else {
-        const msgId = message.getId(); // string
-        callback(false, msgId)
-      }
-    });
-  })
-}
+const push_queue = new RedisQueue(redisClient.getClient());
 
 /* GET products listing. */
-router.get('/', function(req, res, next) {
-  var queryParams = req.query;
-  waterfall([
-    function(waterfallCallback) {
-      redisClient.get(md5(queryParams), function(err, results) {
-        if (err) { console.log(err); waterfallCallback(); return; }
-        if (results) {
-          res.render('products', {'title': 'Products', products: results, 'totalCount': results.length, 'cache': true});
-          return;
-        }
-        waterfallCallback();
-      });
-    },
-    function(waterfallCallback) {
-      productService.getRecords(queryParams, function(err, results) {
-        if(err) { res.send(500,"Server Error"); return; }
-        redisClient.set(md5(queryParams), results, 100);
-        // Respond with results as JSON
-        res.render('products', {'title': 'Products', products: results, 'totalCount': results.length,  'cache': false});
+router.get('/', async function(req, res, next) {
+  const queryParams = req.query;
 
-      });
-    }
-  ]);
+  const value = await redisClient.get(md5(queryParams));
+  if (value !== null) {
+    res.render('products', {'title': 'Products', products: value, 'totalCount': value.length, 'cache': true});
+    return;
+  }
+
+  productService.getRecords(queryParams, function(err, results) {
+    if(err) { res.status(500).send("Server Error"); return; }
+    redisClient.set(md5(queryParams), results, 100);
+    // Respond with results as JSON
+    res.render('products', {'title': 'Products', products: results, 'totalCount': results.length,  'cache': false});
+  });
+
+  return;
 });
 
 /* GET products listing. */
 router.get('/id/:id', function(req, res, next) {
-  var params = req.params;
+  let params = req.params;
   productService.getRecord(params.id, function(err, product) {
-    if(err) { res.send(500,"Server Error"); return; }
+    if(err) {
+      res.status(500).send("Server Error");
+      return;
+    }
     // Respond with results as JSON
     if (product === undefined) {
-      res.send(400,"Not Found");
+      res.status(400).send("Not Found");
       return;
     }
     res.render('product', {'title': product['name'], product: product });
@@ -72,7 +49,7 @@ router.get('/id/:id', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  var product = {
+  const product = {
     'id': 0,
     'name': '',
     'description': '',
@@ -85,8 +62,8 @@ router.get('/new', function(req, res, next) {
 });
 
 router.post('/new', function(req, res, next) {
-  var params = req.body;
-  var categories = params.categories;
+  const params = req.body;
+  const categories = params.categories;
   delete params['categories'];
 
   //TODO: Form filter&validation opearation required!
@@ -94,7 +71,7 @@ router.post('/new', function(req, res, next) {
   waterfall(
     [
       function(waterfallCallback) { // Saving Product to MySQL DB
-        result = {};
+        let result = {};
         productService.insert(params, function(err, insertId) {
           if (err) { res.redirect('/product'); }
           productService.upsertCategories(insertId, categories, function(err) {
@@ -104,7 +81,7 @@ router.post('/new', function(req, res, next) {
         });
       },
       function(result, waterfallCallback) {
-        pushQueue({'action':'insert', 'productId': result.insertId}, (err, result) => {
+        push_queue.push('product_updates', {'action':'insert', 'productId': result.insertId}, (err, result) => {
           waterfallCallback(false, result);
         });
       }
@@ -128,7 +105,7 @@ router.get('/:id/delete', function(req, res, next) {
         });
       },
       function(waterfallCallback) {
-        pushQueue({'action':'delete', 'productId': params.id}, (err, result) => {
+        push_queue.push('product_updates', {'action':'delete', 'productId': params.id}, (err, result) => {
           waterfallCallback(false, result);
         });
       }
@@ -166,8 +143,8 @@ router.get('/:id/edit', function(req, res, next) {
         });
       },
       function(result, waterfallCallback) {
-        for (i in result.categories) {
-          for (j in result.productCategories) {
+        for (let i in result.categories) {
+          for (let j in result.productCategories) {
             if (result.categories[i].id === result.productCategories[j].id) {
               result.categories[i].selected = true;
               break;
@@ -181,7 +158,7 @@ router.get('/:id/edit', function(req, res, next) {
     ],
     function(err, results) {
       if (err) {
-        res.send(400,"Not Found");
+        res.send("Not Found").status(400);
         return;
       }
       res.render('product-form', {
@@ -202,7 +179,7 @@ router.post('/:id/edit', function(req, res, next) {
   const categories = params.categories;
   delete params['categories'];
 
-  //TODO: Form filter&validation opearation required!
+  //TODO: Form filter&validation operation required!
 
   waterfall(
     [
@@ -212,11 +189,11 @@ router.post('/:id/edit', function(req, res, next) {
           productService.upsertCategories(queryParams.id, categories, function(err) {
             waterfallCallback(false);
             return;
-          })
-        });      
+          });
+        });
       },
       function(waterfallCallback) {
-        pushQueue({'action':'update', 'productId': queryParams.id}, () => {
+        push_queue.push('product_updates', {'action':'update', 'productId': queryParams.id}, () => {
           waterfallCallback(false);
         });
       }

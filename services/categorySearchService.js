@@ -1,7 +1,7 @@
 var db = require('./../libraries/elasticsearch');
 
 exports.getRecords = function(callback) {
-  body = {
+  const body = {
     size: 0,
     aggs: {
       categories: {
@@ -23,13 +23,12 @@ exports.getRecords = function(callback) {
 
   db.search({
     index: 'products',
-    type: 'product',
     body: body
   }).then(function (resp) {
-    var categories = [];
-    var aggs = resp.aggregations.categories.buckets;
-    for (index in aggs) {
-      var obj = {
+    const categories = [];
+    const aggs = resp.aggregations.categories.buckets;
+    for (let index in aggs) {
+      const obj = {
         'name': aggs[index].key,
         'id': aggs[index].categoryId.buckets[0].key,
         'count': aggs[index].doc_count

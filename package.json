@@ -16,13 +16,13 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.4",
     "extend": ">=3.0.2",
+    "hkulekci-simple-redis-queue": "^0.9.8",
     "less-middleware": "~3.0.1",
     "morgan": "^1.9.1",
     "mysql2": "^3.1.0",
     "node-datetime": "^2.1.2",
     "nodemon": "^2.0.20",
     "redis": "^4.6.4",
-    "redis-smq": "^7.2.0",
     "serve-favicon": "~2.4.5",
     "twig": "~0.10.3"
   }

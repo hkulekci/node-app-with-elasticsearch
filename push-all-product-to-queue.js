@@ -3,9 +3,9 @@
 require('dotenv').config();
 const db = require('./libraries/database');
 const redisClient = require('./libraries/redis-client');
-const RedisQueue = require("simple-redis-queue");
+const RedisQueue = require('hkulekci-simple-redis-queue');
 
-var push_queue = new RedisQueue(redisClient.getClient());
+const push_queue = new RedisQueue(redisClient.getClient());
 
 const getAllProductIds = (callback) => {
     let sql = "SELECT p.id FROM products p";

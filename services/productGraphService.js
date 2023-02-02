@@ -17,7 +17,6 @@ exports.getProductCountByDate = function(params, callback) {
     index: 'products',
     body: body
   }).then(function (resp) {
-    console.log(resp)
     let aggs = resp.aggregations.product_counts.buckets;
     let result = {
       "keys": [],
@@ -37,7 +36,7 @@ exports.getProductCountByDate = function(params, callback) {
 };
 
 exports.getCategoriyQuantitySum = function(params, callback) {
-  body = {
+  const body = {
     "size": 0, 
     "aggs": {
       "product_categories": {
@@ -58,7 +57,6 @@ exports.getCategoriyQuantitySum = function(params, callback) {
 
   db.search({
     index: 'products',
-    type: 'product',
     body: body
   }).then(function (resp) {
     var aggs = resp.aggregations.product_categories.buckets;
@@ -83,13 +81,13 @@ exports.getCategoriyQuantitySum = function(params, callback) {
 
 
 exports.getProductQuantities = function(params, callback) {
-  body = {
+  const body = {
     "size": 0, 
     "aggs": {
       "product_counts": {
         "date_histogram": {
           "field": "created_at",
-          "interval": "week"
+          "calendar_interval": "week"
         },
         "aggs": {
           "product_quantities": {
@@ -104,7 +102,6 @@ exports.getProductQuantities = function(params, callback) {
 
   db.search({
     index: 'products',
-    type: 'product',
     body: body
   }).then(function (resp) {
     var aggs = resp.aggregations.product_counts.buckets;
@@ -121,8 +118,8 @@ exports.getProductQuantities = function(params, callback) {
     callback(false, result);
     return;
   }, function (err) {
+    console.trace(err);
     callback(true);
-    console.trace(err.message);
     return;
   });
 };

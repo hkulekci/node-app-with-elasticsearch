@@ -4,11 +4,12 @@ require('dotenv').config();
 const productService = require('./services/productService');
 const categoryService = require('./services/categoryService');
 const productSearchService = require('./services/productSearchService');
-const redisClient = require('./libraries/redis-client');
-const { Consumer } = require("redis-smq");
 const waterfall = require('async/waterfall');
+const RedisQueue = require('hkulekci-simple-redis-queue');
+const redisClient = require("./libraries/redis-client");
 
-const pop_queue = new Consumer();
+const pop_queue = new RedisQueue(redisClient.getClient());
+
 
 const upsertOperation = function(productId, functionCallback) {
   waterfall([
@@ -54,29 +55,27 @@ const deleteOperation = function(productId, functionCallback) {
 };
 
 /***** Redis Message Queue Listener ******/
-pop_queue.consume(
-  'product_updates',
-  function (payload, nextCallback) {
-    const messageData = JSON.parse(payload);
-    if (messageData.action === 'update' || messageData.action === 'insert') {
-      upsertOperation(messageData.productId, function() {
-        console.log('[product_updates] - Processed! - ' + payload);
-        nextCallback()
-      });
-    } else if (messageData.action === 'delete') {
-      deleteOperation(messageData.productId, function() {
-        console.log('[product_updates] - Processed! - ' + payload);
-        nextCallback()
-      });
-    } else {
-      console.log('[product_updates] - Not Processed! - ' + payload);
-      nextCallback()
-    }
-  },
-  (err) => {
-    if (err) console.error(err);
+pop_queue.on('message', (queueName, payload) => {
+  const messageData = JSON.parse(payload);
+
+  if (messageData.action === 'update' || messageData.action === 'insert') {
+    upsertOperation(messageData.productId, function() {
+      console.log('[product_updates] - Processed! - ' + payload);
+      pop_queue.next(queueName)
+    });
+  } else if (messageData.action === 'delete') {
+    deleteOperation(messageData.productId, function() {
+      console.log('[product_updates] - Processed! - ' + payload);
+      pop_queue.next(queueName)
+    });
+  } else {
+    console.log('[product_updates] - Not Processed! - ' + payload);
+    pop_queue.next(queueName)
   }
-  );
+});
 
+pop_queue.on('error', (err) => {
+  console.log(err)
+});
 
-pop_queue.run();
+pop_queue.next('product_updates');
